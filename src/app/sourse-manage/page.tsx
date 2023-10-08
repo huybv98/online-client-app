@@ -2,7 +2,7 @@
 const SourseManage = async () => {
 
     return (
-        <div>sourse-manage</div>
+        <div>Quản lý khóa học</div>
     )
 }
 

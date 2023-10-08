@@ -7,7 +7,7 @@
     .logo {
       position: relative;
       height: $logo-height;
-      padding: $side-menu-padding;
+      padding: $side-menu-padding $side-menu-padding 0 $side-menu-padding;
       overflow: hidden;
       line-height: $logo-height;
       transition: all 0.3s;
@@ -23,6 +23,7 @@
 
   .app-menu {
     min-height: calc(100vh - #{$layout-height});
+    padding-top: 8px;
 
     .ant-menu {
       @extend .color-bg-inherit;

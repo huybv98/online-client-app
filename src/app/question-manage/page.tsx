@@ -2,7 +2,7 @@
 const QuestionManage = async () => {
 
     return (
-        <div>question-manage</div>
+        <div>Quản lý câu hỏi</div>
     )
 }
 

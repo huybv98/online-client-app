@@ -44,7 +44,7 @@ const AppMenu = ({...props}) => {
     }
 
     const handleClick: MenuProps['onClick'] = (e) => {
-        const obj: MenuObject[] | undefined = menu && menu.splice(parseInt(e.key) - 1, 1)
+        const obj: MenuObject[] | undefined = menu && menu.slice(parseInt(e.key) - 1, parseInt(e.key))
         if (obj && obj[0]) {
             const url: string | undefined = obj[0]?.path
             router.push(url || '')

@@ -1,29 +1,27 @@
-import React, { FC, memo } from 'react'
+"use client"
+
 import './index.scss'
-import { LoadingOutlined } from '@ant-design/icons'
-import GLOBAL_LIST from 'constants/globalList'
+import url from '@/assets/icons/svg/loading.svg'
 
 interface Props {
-  loading?: boolean
-  type?: 'default' | 'fallback'
+    loading?: boolean
+    type?: 'default' | 'fallback'
 }
 
-const AppSpinner: FC<Props> = memo(({ ...props }) => {
-  const { loading, type } = props
+const AppSpinner = ({...props}) => {
+    const {loading, type} = props
 
-  const Spinner = () => (
-    <div className="ui-spinner">
-      <div className="ui-spinner__loader">
-        {/*<img src="/src/assets/images/loading.gif" alt="spinner" />*/}
-        <LoadingOutlined style={{ fontSize: 50, color: '#E731B9' }} />
-        <span>{GLOBAL_LIST.PROJECT_NAME}</span>
-      </div>
-    </div>
-  )
+    const Spinner = () => (
+        <div className="ui-spinner">
+            <div className="ui-spinner__loader">
+                <img src={url} alt="spinner"/>
+            </div>
+        </div>
+    )
 
-  return type === 'fallback' ? <Spinner /> : loading ? <Spinner /> : null
-})
+    return type === 'fallback' ? <Spinner/> : loading ? <Spinner/> : null
+}
+
+AppSpinner.defaultProps = {loading: false, type: 'default'}
 
 export default AppSpinner
-
-AppSpinner.defaultProps = { loading: false, type: 'default' }

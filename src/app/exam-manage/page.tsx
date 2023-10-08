@@ -2,7 +2,7 @@
 const ExamManage = async () => {
 
     return (
-        <div>exam-manage</div>
+        <div>Quản lý đề thi</div>
     )
 }
 

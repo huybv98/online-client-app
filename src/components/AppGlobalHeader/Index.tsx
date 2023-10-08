@@ -2,7 +2,7 @@
 
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import PropTypes from 'prop-types'
-import { Avatar, Tooltip } from 'antd'
+import {Avatar, Dropdown, MenuProps, Space, Tooltip} from 'antd'
 import {
   BellIcon,
   Cog8ToothIcon,
@@ -15,8 +15,19 @@ interface Props {
   onChangeVisible: (value: boolean) => void
 }
 
-const GlobalHeader = ({ ...props }) => {
+
+const GlobalHeader = ({ ...props }: Props) => {
   const { visible, onChangeVisible } = props
+  const items: MenuProps['items'] = [
+    {
+      label: 'Tài khoản cá nhân',
+      key: '0',
+    },
+    {
+      label: 'Đăng xuất',
+      key: '1',
+    }
+  ];
 
   const handleClickVisible = () => {
     onChangeVisible(!visible)
@@ -63,9 +74,12 @@ const GlobalHeader = ({ ...props }) => {
               </Tooltip>
             </div>
             <div className="header-avatar">
-              <Avatar size="small" className="avatar">
-                BVH
-              </Avatar>
+
+              <Dropdown menu={{ items }} trigger={['click']}>
+                <Avatar size="small" className="avatar">
+                  BVH
+                </Avatar>
+              </Dropdown>
             </div>
           </div>
         </div>
