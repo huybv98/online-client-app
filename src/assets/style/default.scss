@@ -1,0 +1,31 @@
+body {
+  background: $background-white;
+  color: $color-primary;
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $background-scrollbar-track;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $background-scrollbar-thumb;
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $background-scrollbar-thumb;
+}

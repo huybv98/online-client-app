@@ -1,0 +1,45 @@
+$background-primary: #FFF;
+$background-white: #FFFFFF;
+$background-secondary: #ea00af;
+$background-primary-hover: #D9D9D9;
+$background-secondary-hover: #cfdce6;
+$background-scrollbar-track: rgb(217, 217, 217, 0.5);
+$background-scrollbar-thumb: rgb(217, 217, 217, 1); // D9D9D9
+
+$color-primary: #262626;
+$color-white: #FFFFFF;
+$color-secondary: #f5f5f5;
+$color-primary-hover: #0043a5;
+$color-primary-active: #F91EC2;
+$color-box-shadow: #E8E8E8;
+
+$error-primary: #F04438;
+$success-primary: #12B76A;
+$disable-primary: #EFF0F1;
+
+$layout-height: 3.5rem;
+$logo-height: 3.5rem;
+$content-padding: 1.5rem;
+$side-menu-padding: 1rem;
+
+$font-family: 'Roboto', sans-serif;
+
+.color-bg-inherit {
+  background: inherit;
+  color: inherit;
+}
+
+.color-bg-primary {
+  background-color: $background-white !important;
+  color: $color-primary !important;
+}
+
+.color-bg-secondary {
+  background-color: $background-primary-hover !important;
+  color: $color-primary !important;
+}
+
+.color-bg-hover-menu {
+  background-color: $background-secondary-hover !important;
+  color: $color-primary-hover !important;
+}
