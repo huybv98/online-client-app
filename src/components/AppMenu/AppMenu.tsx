@@ -59,7 +59,6 @@ const AppMenu = ({...props}) => {
 
     return (
         <>
-            <div>{current}</div>
             <div className="app-menu">
                 {MenuItems && (
                     <>
