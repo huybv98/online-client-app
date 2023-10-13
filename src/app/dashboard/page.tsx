@@ -1,5 +1,6 @@
 'use client'
-// import AppTable from "@/components/AppTable";
+
+import AppTable from "@/components/AppTable";
 import { useTranslation } from '@/locales/client'
 
 const Dashboard = () => {
@@ -96,7 +97,7 @@ const Dashboard = () => {
     return (
         <>
             <div>Tổng quan {t('welcome')}</div>
-            {/*<AppTable dataSource={dataSource} columns={columns}/>*/}
+            <AppTable dataSource={dataSource} columns={columns}/>
         </>
     )
 }

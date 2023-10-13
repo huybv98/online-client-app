@@ -6,7 +6,7 @@ import AppGlobalHeader from '@/components/AppGlobalHeader/Index'
 import AppGlobalFooter from '@/components/AppGlobalFooter/Index'
 import SideMenu from '@/components/AppMenu/SideMenu'
 import { Background, Colors, LayoutHeight } from '@/assets/style/variables'
-// import { Head } from "next/head";
+// import { useTranslation } from "@/locales/client";
 
 const { Header, Footer, Sider, Content } = Layout
 const Style: React.CSSProperties = {
@@ -37,37 +37,38 @@ interface Props {
 
 const AppLayout = ({ children }: Props)=> {
   const [visible, setVisible] = useState<boolean>(false)
+  // const [title, setTitle] = useState<string>('')
+  // const { t } = useTranslation()
 
   const handleChangeVisible = (visible: boolean) => {
     setVisible(visible)
   }
 
   return (
-    <div className='app-page'>
-      {/*<Head>*/}
-      {/*  <title>123</title>*/}
-      {/*</Head>*/}
-      <Layout style={Style}>
-        <Sider collapsed={visible} style={siderStyle} collapsedWidth={64} width={280}>
-          <SideMenu visible={visible} />
-        </Sider>
-        <Layout style={Style}>
-          <Header style={headerStyle} className="p-0">
-            <AppGlobalHeader visible={visible} onChangeVisible={handleChangeVisible} />
-          </Header>
-          <div className="inner-layout">
-            <Content>
-              <div className="content">
-                {children}
+      <>
+        <div className='app-page'>
+          <Layout style={Style}>
+            <Sider collapsed={visible} style={siderStyle} collapsedWidth={64} width={280}>
+              <SideMenu visible={visible} />
+            </Sider>
+            <Layout style={Style}>
+              <Header style={headerStyle} className="p-0">
+                <AppGlobalHeader visible={visible} onChangeVisible={handleChangeVisible} />
+              </Header>
+              <div className="inner-layout">
+                <Content>
+                  <div className="content">
+                    {children}
+                  </div>
+                </Content>
+                <Footer style={footerStyle} className="p-0">
+                  <AppGlobalFooter />
+                </Footer>
               </div>
-            </Content>
-            <Footer style={footerStyle} className="p-0">
-              <AppGlobalFooter />
-            </Footer>
-          </div>
-        </Layout>
-      </Layout>
-    </div>
+            </Layout>
+          </Layout>
+        </div>
+      </>
   )
 }
 
