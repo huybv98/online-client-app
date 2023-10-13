@@ -1,22 +1,43 @@
-const Dashboard = {
-    title: 'Dashboard',
-    breadcrumbText: 'Dashboard'
-}
-const ExamManage = {
-    title: 'Quản lý để thi',
-    breadcrumbText: 'Quản lý đề thi'
-}
-const HistoryExam = {
-    title: 'Lịch sử thi',
-    breadcrumbText: 'Lịch sử thi'
-}
-const QuestionManage = {
-    title: 'Quản lý câu hỏi',
-    breadcrumbText: 'Quản lý câu hỏi'
-}
-const SourseManage = {
-    title: 'Quản lý khóa học',
-    breadcrumbText: 'Quản lý khóa học'
+import { createInstance } from 'i18next'
+import resourcesToBackend from 'i18next-resources-to-backend'
+import { initReactI18next } from 'react-i18next/initReactI18next'
+import { getOptions, languages, fallbackLng } from './i18n'
+import { cookies, headers } from 'next/headers'
+import acceptLanguage from 'accept-language'
+
+const initI18next = async (lng, ns) => {
+    // on server side we create a new instance for each render, because during compilation everything seems to be executed in parallel
+    const i18nInstance = createInstance()
+    await i18nInstance
+        .use(initReactI18next)
+        .use(resourcesToBackend((language, namespace) => import(`./${language}/${namespace}.json`)))
+        .init(getOptions(lng, ns))
+    return i18nInstance
 }
 
-export { Dashboard, ExamManage, HistoryExam, QuestionManage, SourseManage }
+acceptLanguage.languages(languages)
+const cookieName = 'i18next'
+
+export function detectLanguage() {
+    const ckies = cookies()
+    const hders = headers()
+    let lng
+    const nextUrlHeader = hders.has('next-url') && hders.get('next-url')
+    if (nextUrlHeader && nextUrlHeader.indexOf(`"lng":"`) > -1) {
+        const qsObj = JSON.parse(nextUrlHeader.substring(nextUrlHeader.indexOf('{'), nextUrlHeader.indexOf(`}`) + 1))
+        lng = qsObj.lng
+    }
+    if (!lng && ckies.has(cookieName)) lng = acceptLanguage.get(ckies.get(cookieName).value)
+    if (!lng) lng = acceptLanguage.get(hders.get('Accept-Language'))
+    if (!lng) lng = fallbackLng
+    return lng
+}
+
+export async function useTranslation(ns, options = {}) {
+    const lng = detectLanguage()
+    const i18nextInstance = await initI18next(lng, ns)
+    return {
+        t: i18nextInstance.getFixedT(lng, Array.isArray(ns) ? ns[0] : ns, options.keyPrefix),
+        i18n: i18nextInstance
+    }
+}

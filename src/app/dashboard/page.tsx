@@ -1,6 +1,8 @@
-import AppTable from "@/components/AppTable";
+'use client'
+// import AppTable from "@/components/AppTable";
+import { useTranslation } from '@/locales/client'
 
-const Dashboard = async () => {
+const Dashboard = () => {
     const dataSource = [
         {
             name: 'Bùi Văn Huy',
@@ -90,11 +92,11 @@ const Dashboard = async () => {
             align: 'center'
         }
     ]
-
+    const { t } = useTranslation('translation')
     return (
         <>
-            <div>Tổng quan</div>
-            <AppTable dataSource={dataSource} columns={columns}/>
+            <div>Tổng quan {t('welcome')}</div>
+            {/*<AppTable dataSource={dataSource} columns={columns}/>*/}
         </>
     )
 }

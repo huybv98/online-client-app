@@ -4,35 +4,35 @@ import { Dashboard, ExamManage, HistoryExam, QuestionManage, SourseManage } from
 const AppMenuArray: Array<MenuObject> = [
     {
         path: '/dashboard',
-        title: Dashboard.title,
+        title: 'dashboard.title',
         breadcrumbText: 'dashboard.breadcrumbText',
         hidden: false,
         icon: null
     },
     {
         path: '/sourse-manage',
-        title: SourseManage.title,
+        title: 'sourse-manage.title',
         breadcrumbText: 'sourse-manage.breadcrumbText',
         hidden: false,
         icon: null
     },
     {
         path: '/exam-manage',
-        title: ExamManage.title,
+        title: 'exam-manage.title',
         breadcrumbText: 'exam-manage.breadcrumbText',
         hidden: false,
         icon: null
     },
     {
         path: '/question-manage',
-        title: QuestionManage.title,
+        title: 'question-manage.title',
         breadcrumbText: 'question-manage.breadcrumbText',
         hidden: false,
         icon: null
     },
     {
         path: '/history-exam',
-        title: HistoryExam.title,
+        title: 'history-exam.title',
         breadcrumbText: 'history-exam.breadcrumbText',
         hidden: false,
         icon: null

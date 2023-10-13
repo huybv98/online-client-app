@@ -1,6 +1,6 @@
 "use client"
 
-const GlobalFooter = () => {
+const AppGlobalFooter = () => {
   return (
     <>
       <div className="footer text-center">
@@ -12,4 +12,4 @@ const GlobalFooter = () => {
   )
 }
 
-export default GlobalFooter
+export default AppGlobalFooter

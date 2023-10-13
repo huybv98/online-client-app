@@ -16,7 +16,7 @@ interface Props {
 }
 
 
-const GlobalHeader = ({ ...props }: Props) => {
+const AppGlobalHeader = ({ ...props }: Props) => {
   const { visible, onChangeVisible } = props
   const items: MenuProps['items'] = [
     {
@@ -88,11 +88,11 @@ const GlobalHeader = ({ ...props }: Props) => {
   )
 }
 
-GlobalHeader.propTypes = {
+AppGlobalHeader.propTypes = {
   visible: PropTypes.bool,
 }
-GlobalHeader.defaultProps = {
+AppGlobalHeader.defaultProps = {
   visible: false,
 }
 
-export default GlobalHeader
+export default AppGlobalHeader

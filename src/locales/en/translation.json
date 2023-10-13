@@ -1,0 +1,19 @@
+{
+  "welcome": "Welcome",
+  "home": "home",
+
+  "dashboard.title" :"Dashboard",
+  "dashboard.breadcrumbText" :"Dashboard",
+
+  "sourse-manage.title": "Quản lý khóa học",
+  "sourse-manage.breadcrumbText": "Quản lý khóa học",
+
+  "exam-manage.title": "Quản lý đề thi",
+  "exam-manage.breadcrumbText": "Quản lý đề thi",
+
+  "question-manage.title": "Quản lý câu hỏi",
+  "question-manage.breadcrumbText": "Quản lý câu hỏi",
+
+  "history-exam.title": "Lịch sử thi",
+  "history-exam.breadcrumbText": "Lịch sử thi"
+}

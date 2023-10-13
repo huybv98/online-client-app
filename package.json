@@ -10,10 +10,16 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "accept-language": "^3.0.18",
     "antd": "^5.9.4",
+    "i18next": "^23.5.1",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-resources-to-backend": "^1.1.4",
+    "locize-cli": "^7.14.10",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-i18next": "^13.2.2",
     "sass": "^1.69.0"
   },
   "devDependencies": {

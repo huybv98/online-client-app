@@ -1,10 +1,11 @@
 "use client"
 
 import { Menu } from 'antd'
-import { useState} from "react";
-import {MenuItem, MenuObject} from '@/types/menu'
+import { useState } from "react";
+import { MenuItem, MenuObject } from '@/types/menu'
 import type { MenuProps } from 'antd'
 import { useRouter } from "next/navigation";
+import { useTranslation } from '@/locales/client'
 
 const getItem = (
     label: React.ReactNode,
@@ -22,9 +23,11 @@ const getItem = (
 
 const getListItem = (menu: MenuObject[] | undefined) => {
     const items: MenuItem[] = []
+    const { t } = useTranslation('translation')
     if (menu && menu.length) {
         menu.forEach((obj, index) => {
-            const item = getItem(obj.title, (index + 1).toString(), obj.icon)
+            let label = t(obj.title)
+            const item = getItem(label, (index + 1).toString(), obj.icon)
             items.push(item)
         })
     }
@@ -32,9 +35,10 @@ const getListItem = (menu: MenuObject[] | undefined) => {
 }
 
 const AppMenu = ({...props}) => {
-    const {menu} = props
+    const { menu } = props
     const [MenuItems, setMenuItems] = useState<Array<MenuItem>>([])
     const router = useRouter();
+    const [current, setCurrent] = useState<String>('1');
 
     const getMenu = () => {
         if (MenuItems && MenuItems.length === 0) {
@@ -52,14 +56,16 @@ const AppMenu = ({...props}) => {
     }
 
     getMenu()
+
     return (
         <>
+            <div>{current}</div>
             <div className="app-menu">
                 {MenuItems && (
                     <>
                         <div className="sidebar-collapse">
                             <Menu
-                                defaultSelectedKeys={['1']}
+                                defaultSelectedKeys={[current]}
                                 mode="inline"
                                 theme="light"
                                 items={MenuItems}

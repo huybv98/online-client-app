@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import { Layout } from 'antd'
-import GlobalHeader from '@/components/AppGlobalHeader/Index'
-import GlobalFooter from '@/components/AppGlobalFooter/Index'
+import AppGlobalHeader from '@/components/AppGlobalHeader/Index'
+import AppGlobalFooter from '@/components/AppGlobalFooter/Index'
 import SideMenu from '@/components/AppMenu/SideMenu'
 import { Background, Colors, LayoutHeight } from '@/assets/style/variables'
 // import { Head } from "next/head";
@@ -53,7 +53,7 @@ const AppLayout = ({ children }: Props)=> {
         </Sider>
         <Layout style={Style}>
           <Header style={headerStyle} className="p-0">
-            <GlobalHeader visible={visible} onChangeVisible={handleChangeVisible} />
+            <AppGlobalHeader visible={visible} onChangeVisible={handleChangeVisible} />
           </Header>
           <div className="inner-layout">
             <Content>
@@ -62,7 +62,7 @@ const AppLayout = ({ children }: Props)=> {
               </div>
             </Content>
             <Footer style={footerStyle} className="p-0">
-              <GlobalFooter />
+              <AppGlobalFooter />
             </Footer>
           </div>
         </Layout>
