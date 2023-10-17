@@ -6,7 +6,6 @@ import AppGlobalHeader from '@/components/AppGlobalHeader/Index'
 import AppGlobalFooter from '@/components/AppGlobalFooter/Index'
 import SideMenu from '@/components/AppMenu/SideMenu'
 import { Background, Colors, LayoutHeight } from '@/assets/style/variables'
-// import { useTranslation } from "@/locales/client";
 
 const { Header, Footer, Sider, Content } = Layout
 const Style: React.CSSProperties = {
@@ -37,8 +36,6 @@ interface Props {
 
 const AppLayout = ({ children }: Props)=> {
   const [visible, setVisible] = useState<boolean>(false)
-  // const [title, setTitle] = useState<string>('')
-  // const { t } = useTranslation()
 
   const handleChangeVisible = (visible: boolean) => {
     setVisible(visible)

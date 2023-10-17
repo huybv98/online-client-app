@@ -4,7 +4,7 @@ const nextConfig = {
     swcMinify: true,
     experimental: {
         // Required:
-        appDir: true
+        // appDir: true
     },
     webpack: (config) => {
         // this will override the experiments

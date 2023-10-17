@@ -1,8 +1,7 @@
 "use client"
 
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
-import PropTypes from 'prop-types'
-import {Avatar, Dropdown, MenuProps, Space, Tooltip} from 'antd'
+import {Avatar, Dropdown, MenuProps, Tooltip} from 'antd'
 import {
   BellIcon,
   Cog8ToothIcon,
@@ -11,13 +10,16 @@ import {
 } from '@heroicons/react/24/outline'
 
 interface Props {
-  visible?: boolean
+  visible: boolean
   onChangeVisible: (value: boolean) => void
+}
+const defaultProps = {
+  visible: false,
 }
 
 
 const AppGlobalHeader = ({ ...props }: Props) => {
-  const { visible, onChangeVisible } = props
+  const { visible, onChangeVisible } = { ...defaultProps, ...props }
   const items: MenuProps['items'] = [
     {
       label: 'Tài khoản cá nhân',
@@ -86,13 +88,6 @@ const AppGlobalHeader = ({ ...props }: Props) => {
       </div>
     </>
   )
-}
-
-AppGlobalHeader.propTypes = {
-  visible: PropTypes.bool,
-}
-AppGlobalHeader.defaultProps = {
-  visible: false,
 }
 
 export default AppGlobalHeader

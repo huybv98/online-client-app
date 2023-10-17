@@ -2,16 +2,23 @@
 
 import {Table} from "antd";
 import {columnsType} from "@/types/table";
-import PropTypes from "prop-types";
 
 interface Props {
     dataSource: Array<any>
     columns: Array<columnsType>
     visibleFullScreen: boolean
+    rowKey: string,
+}
+
+const defaultProps = {
+    dataSource: [],
+    columns: [],
+    visibleFullScreen: false,
+    rowKey: 'id',
 }
 
 const AppTable = ({...props}: Props) => {
-    const {dataSource, columns, visibleFullScreen} = props
+    const { dataSource, columns, visibleFullScreen, rowKey} = { ...defaultProps, ...props}
 
     return (
         <>
@@ -21,23 +28,13 @@ const AppTable = ({...props}: Props) => {
                         <Table
                             dataSource={dataSource}
                             columns={columns}
+                            rowKey={rowKey}
                         />
                     </div>
                 ) : ''
             }
         </>
     )
-}
-
-AppTable.propTypes = {
-    dataSource: PropTypes.array,
-    columns: PropTypes.array,
-    visibleFullScreen: PropTypes.bool,
-}
-AppTable.defaultProps = {
-    dataSource: [],
-    columns: [],
-    visibleFullScreen: false,
 }
 
 export default AppTable

@@ -6,6 +6,7 @@ import { useTranslation } from '@/locales/client'
 const Dashboard = () => {
     const dataSource = [
         {
+            id: 1,
             name: 'Bùi Văn Huy',
             age: 25,
             email: 'huy@gmail.com',
@@ -13,6 +14,7 @@ const Dashboard = () => {
             note: 'Lorem Ipsum'
         },
         {
+            id: 2,
             name: 'Bùi Văn Huân',
             age: 25,
             email: 'huy@gmail.com',
@@ -20,6 +22,7 @@ const Dashboard = () => {
             note: 'Lorem Ipsum'
         },
         {
+            id: 3,
             name: 'Bùi Văn Chiến',
             age: 25,
             email: 'huy@gmail.com',
@@ -27,6 +30,7 @@ const Dashboard = () => {
             note: 'Lorem Ipsum'
         },
         {
+            id: 4,
             name: 'Bùi Minh Ngọc',
             age: 25,
             email: 'huy@gmail.com',
