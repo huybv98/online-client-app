@@ -1,4 +1,4 @@
-.ant-layout {
+.app-layout.ant-layout {
 
   .side-menu {
     box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
@@ -37,9 +37,14 @@
       border-radius: 8px;
       height: 40px;
       line-height: 40px;
+      display: flex;
+      align-content: center;
 
       &:hover {
         @extend .color-bg-hover-menu
+      }
+      .ant-menu-title-content {
+        margin-left: 12px;
       }
     }
 

@@ -29,3 +29,70 @@ ul, li {
 ::-webkit-scrollbar-thumb:hover {
   background-color: $background-scrollbar-thumb;
 }
+
+.F14M21 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.F14B21 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.F16M24 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.F16B24 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.F18M27 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.F18B27 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.color-bg-inherit {
+  background: inherit;
+  color: inherit;
+}
+
+.color-bg-primary {
+  background-color: $background-white !important;
+  color: $color-primary !important;
+}
+
+.color-bg-secondary {
+  background-color: $background-primary-hover !important;
+  color: $color-primary !important;
+}
+
+.color-bg-hover-menu {
+  background-color: $background-secondary-hover !important;
+  color: $color-primary-hover !important;
+}
+
+.color-bg-hover-menu {
+  background-color: $background-secondary-hover !important;
+  color: $color-primary-hover !important;
+}

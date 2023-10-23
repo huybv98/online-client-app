@@ -1,11 +1,12 @@
 "use client"
 
 import { Menu } from 'antd'
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { MenuItem, MenuObject } from '@/types/menu'
 import type { MenuProps } from 'antd'
 import { useRouter } from "next/navigation";
 import { useTranslation } from '@/locales/client'
+import AppSvgIcon from "@/components/AppSvgIcon/index";
 
 const getItem = (
     label: React.ReactNode,
@@ -21,30 +22,32 @@ const getItem = (
     } as MenuItem
 }
 
-const getListItem = (menu: MenuObject[] | undefined) => {
-    const items: MenuItem[] = []
-    const { t } = useTranslation('translation')
-    if (menu && menu.length) {
-        menu.forEach((obj, index) => {
-            let label = t(obj.title)
-            const item = getItem(label, (index + 1).toString(), obj.icon)
-            items.push(item)
-        })
-    }
-    return items
-}
-
 const AppMenu = ({...props}) => {
     const { menu } = props
     const [MenuItems, setMenuItems] = useState<Array<MenuItem>>([])
     const router = useRouter();
-    const [current, setCurrent] = useState<String>('1');
+    const [current, setCurrent] = useState<String>('0');
+    const { t } = useTranslation('translation')
 
     const getMenu = () => {
         if (MenuItems && MenuItems.length === 0) {
             const items: Array<MenuItem> = getListItem(menu)
             setMenuItems(items)
         }
+    }
+
+    const getListItem = (menu: MenuObject[] | undefined) => {
+        const items: MenuItem[] = []
+
+        if (menu && menu.length) {
+            menu.forEach((obj, index) => {
+                let label = t(obj.title)
+                let Icon: JSX.Element | null = obj.icon ? <AppSvgIcon name={obj.icon}/> : null
+                const item = getItem(label, (index + 1).toString(), Icon)
+                items.push(item)
+            })
+        }
+        return items
     }
 
     const handleClick: MenuProps['onClick'] = (e) => {

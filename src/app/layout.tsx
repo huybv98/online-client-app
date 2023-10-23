@@ -4,6 +4,9 @@ import { dir } from 'i18next'
 import { detectLanguage } from '@/locales'
 // import { Inter } from 'next/font/google'
 import AppLayout from '@/components/AppLayout'
+import type { ThemeConfig } from 'antd';
+import { ConfigProvider } from "antd";
+import { GlobalFont } from "@/assets/style/variables";
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +25,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
     const lng = detectLanguage()
+    const config: ThemeConfig = {
+        token: {
+            ...GlobalFont
+        },
+    };
 
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
+      <ConfigProvider theme={config}>
           <AppLayout>{children}</AppLayout>
+      </ConfigProvider>,
       </body>
     </html>
   )

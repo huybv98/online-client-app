@@ -44,11 +44,11 @@ const AppLayout = ({ children }: Props)=> {
   return (
       <>
         <div className='app-page'>
-          <Layout style={Style}>
+          <Layout style={Style} className='app-layout'>
             <Sider collapsed={visible} style={siderStyle} collapsedWidth={64} width={280}>
               <SideMenu visible={visible} />
             </Sider>
-            <Layout style={Style}>
+            <Layout style={Style} className='app-layout-item'>
               <Header style={headerStyle} className="p-0">
                 <AppGlobalHeader visible={visible} onChangeVisible={handleChangeVisible} />
               </Header>

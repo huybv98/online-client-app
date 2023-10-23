@@ -13,4 +13,10 @@ const LayoutHeight = {
     Height: '3.5rem',
 }
 
-export {Colors, Background, LayoutHeight}
+const GlobalFont = {
+    fontFamily: 'Roboto, sans-serif',
+    colorText: '#262626',
+    lineHeight: '1.5'
+}
+
+export {Colors, Background, LayoutHeight, GlobalFont }

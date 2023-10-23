@@ -23,23 +23,3 @@ $content-padding: 1.5rem;
 $side-menu-padding: 1rem;
 
 $font-family: 'Roboto', sans-serif;
-
-.color-bg-inherit {
-  background: inherit;
-  color: inherit;
-}
-
-.color-bg-primary {
-  background-color: $background-white !important;
-  color: $color-primary !important;
-}
-
-.color-bg-secondary {
-  background-color: $background-primary-hover !important;
-  color: $color-primary !important;
-}
-
-.color-bg-hover-menu {
-  background-color: $background-secondary-hover !important;
-  color: $color-primary-hover !important;
-}

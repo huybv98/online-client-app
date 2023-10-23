@@ -7,35 +7,35 @@ const AppMenuArray: Array<MenuObject> = [
         title: 'dashboard.title',
         breadcrumbText: 'dashboard.breadcrumbText',
         hidden: false,
-        icon: null
+        icon: 'ChartBarSquareIcon'
     },
     {
         path: '/sourse-manage',
         title: 'sourse-manage.title',
         breadcrumbText: 'sourse-manage.breadcrumbText',
         hidden: false,
-        icon: null
+        icon: 'AcademicCapIcon'
     },
     {
         path: '/exam-manage',
         title: 'exam-manage.title',
         breadcrumbText: 'exam-manage.breadcrumbText',
         hidden: false,
-        icon: null
+        icon: 'BookOpenIcon'
     },
     {
         path: '/question-manage',
         title: 'question-manage.title',
         breadcrumbText: 'question-manage.breadcrumbText',
         hidden: false,
-        icon: null
+        icon: 'ClipboardDocumentListIcon'
     },
     {
         path: '/history-exam',
         title: 'history-exam.title',
         breadcrumbText: 'history-exam.breadcrumbText',
         hidden: false,
-        icon: null
+        icon: 'DocumentDuplicateIcon'
     },
 
 ]
