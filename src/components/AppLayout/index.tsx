@@ -9,11 +9,11 @@ import { Background, Colors, LayoutHeight } from '@/assets/style/variables'
 
 const { Header, Footer, Sider, Content } = Layout
 const Style: React.CSSProperties = {
-  backgroundColor: Background.primary,
+  backgroundColor: Background.white,
   color: Colors.primary,
 }
 const siderStyle: React.CSSProperties = {
-  backgroundColor: Background.secondary,
+  backgroundColor: Background.white,
   minHeight: '100vh',
   color: Colors.primary,
 }
@@ -22,6 +22,10 @@ const headerStyle: React.CSSProperties = {
   height: LayoutHeight.Height,
   lineHeight: LayoutHeight.lineHeight,
   color: 'inherit',
+}
+
+const contentStyle :React.CSSProperties = {
+  backgroundColor: Background.primary,
 }
 const footerStyle: React.CSSProperties = {
   backgroundColor: Background.white,
@@ -53,7 +57,7 @@ const AppLayout = ({ children }: Props)=> {
                 <AppGlobalHeader visible={visible} onChangeVisible={handleChangeVisible} />
               </Header>
               <div className="inner-layout">
-                <Content>
+                <Content style={contentStyle}>
                   <div className="content">
                     {children}
                   </div>

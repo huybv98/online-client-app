@@ -1,8 +1,9 @@
 .app-svg-icon {
-  width: max-content;
+  //width: max-content;
+}
 
-  &.ant-menu-item-icon {
-    display: flex;
-    align-items: center;
+.app-layout.ant-layout {
+  .app-svg-icon.ant-menu-item-icon {
+    min-width: max-content;
   }
 }

@@ -33,8 +33,8 @@ const AppTable = ({...props}: Props) => {
                                     <div className='flex'>{ title }</div>
                                 </div>
                                 <div className='app-table-head-extra flex ml-auto'>
-                                    <div className='app-input app-input-search mr-4'>
-                                        <Input placeholder="Tìm kiếm nhanh" className='min-w-[280px]'/>
+                                    <div className='app-input app-input-search mr-4 min-w-[280px]'>
+                                        <Input placeholder="Tìm kiếm nhanh"/>
                                     </div>
                                     <div className='flex items-center'>
                                         <div className='cursor-pointer mr-2'>

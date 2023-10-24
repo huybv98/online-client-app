@@ -5,8 +5,8 @@ const Colors = {
 }
 const Background = {
     white: '#FFFFFF',
-    primary: '#FFFFFF',
-    secondary: '#FFFFFF',
+    primary: '#FAFAFA',
+    secondary: '#FEFEFE',
 }
 const LayoutHeight = {
     lineHeight: '3.5rem',

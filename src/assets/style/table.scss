@@ -1,1 +1,22 @@
+.app-table {
+  background: $background-white;
+  box-shadow: drop-shadow(0 0 10px rgb(0 0 0 / 0.05));
 
+
+  .app-table-head {
+    border-bottom: 1px solid $color-border;
+  }
+
+  .ant-table-wrapper {
+    padding: 16px;
+
+    .ant-table-cell,
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > th,
+    .ant-table-tbody > tr > td,
+    tfoot > tr > th,
+    tfoot > tr > td {
+      padding: 9px 8px;
+    }
+  }
+}

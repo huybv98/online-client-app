@@ -6,6 +6,7 @@ import AppLayout from '@/components/AppLayout'
 import type { ThemeConfig } from 'antd';
 import { ConfigProvider } from "antd";
 import { GlobalFont } from "@/assets/style/variables";
+import StyledComponentsRegistry from '@/utils/AntdRegistry'
 
 export const metadata: Metadata = {
     title: {
@@ -31,9 +32,11 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
-      <ConfigProvider theme={config}>
-          <AppLayout>{children}</AppLayout>
-      </ConfigProvider>
+      <StyledComponentsRegistry>
+          <ConfigProvider theme={config}>
+              <AppLayout>{children}</AppLayout>
+          </ConfigProvider>
+      </StyledComponentsRegistry>
       </body>
     </html>
   )

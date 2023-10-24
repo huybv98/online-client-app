@@ -9,23 +9,25 @@ interface Props {
     name: string,
     type?: 'outline' | 'solid',
     color?: string,
+    isDefaultClass?: boolean,
 }
 
 const defaultProps = {
     disabled: false,
     name: '',
     type: 'outline',
-    color: ''
+    color: '',
+    isDefaultClass: true
 }
 
 const defaultClassSvg = 'md:w-3 md:h-3 lg:w-5 lg:h-5'
 const disabledClassSvg = 'disabled'
 
 const AppSvgIcon = ({ ...props }: Props) => {
-    const { disabled, type, color, className } = { ...defaultProps, ...props}
+    const { disabled, type, color, className, isDefaultClass } = { ...defaultProps, ...props}
     let icons = { ...OIcons }
     let disCls = ''
-    let cls = `${defaultClassSvg}`
+    let cls = isDefaultClass ? `${defaultClassSvg}` : ''
     const Style: React.CSSProperties = {
         color: color,
     }
