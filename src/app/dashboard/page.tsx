@@ -100,8 +100,8 @@ const Dashboard = () => {
     const { t } = useTranslation('translation')
     return (
         <>
-            <div>Tổng quan {t('welcome')}</div>
-            <AppTable dataSource={dataSource} columns={columns}/>
+            <div>Tổng quan { t('welcome') }</div>
+            <AppTable title={'Danh sách'} dataSource={dataSource} columns={columns}/>
         </>
     )
 }

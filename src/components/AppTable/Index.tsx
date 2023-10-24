@@ -1,6 +1,6 @@
 "use client"
 
-import {Table} from "antd";
+import {Input, Table} from "antd";
 import {columnsType} from "@/types/table";
 import AppSvgIcon from "@/components/AppSvgIcon";
 
@@ -16,25 +16,38 @@ const defaultProps = {
     columns: [],
     visibleFullScreen: false,
     rowKey: 'id',
+    title: '',
 }
 
 const AppTable = ({...props}: Props) => {
-    const { dataSource, columns, visibleFullScreen, rowKey} = { ...defaultProps, ...props}
+    const { title, dataSource, columns, visibleFullScreen, rowKey } = { ...defaultProps, ...props }
 
     return (
         <>
             {
                 !visibleFullScreen ? (
                     <div className="app-table">
-                        <div className='flex justify-items-end items-center'>
-                            <div className='cursor-pointer mr-2'>
-                                <AppSvgIcon name="ArrowPathIcon"/>
-                            </div>
-                            <div className='cursor-pointer mr-2'>
-                                <AppSvgIcon name="ArrowsPointingOutIcon"/>
-                            </div>
-                            <div className='cursor-pointer'>
-                                <AppSvgIcon name="Cog6ToothIcon"/>
+                        <div className='app-table-head p-4'>
+                            <div className='app-table-head-wrapper flex items-center'>
+                                <div className='app-table-head-title'>
+                                    <div className='flex'>{ title }</div>
+                                </div>
+                                <div className='app-table-head-extra flex ml-auto'>
+                                    <div className='app-input app-input-search mr-4'>
+                                        <Input placeholder="Tìm kiếm nhanh" className='min-w-[280px]'/>
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <div className='cursor-pointer mr-2'>
+                                            <AppSvgIcon name="ArrowPathIcon"/>
+                                        </div>
+                                        <div className='cursor-pointer mr-2'>
+                                            <AppSvgIcon name="ArrowsPointingOutIcon"/>
+                                        </div>
+                                        <div className='cursor-pointer'>
+                                            <AppSvgIcon name="Cog6ToothIcon"/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <Table

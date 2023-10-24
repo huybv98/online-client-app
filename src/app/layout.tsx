@@ -2,13 +2,10 @@ import './globals.scss'
 import type { Metadata } from 'next'
 import { dir } from 'i18next'
 import { detectLanguage } from '@/locales'
-// import { Inter } from 'next/font/google'
 import AppLayout from '@/components/AppLayout'
 import type { ThemeConfig } from 'antd';
 import { ConfigProvider } from "antd";
 import { GlobalFont } from "@/assets/style/variables";
-
-// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
     title: {
@@ -36,7 +33,7 @@ export default function RootLayout({
       <body>
       <ConfigProvider theme={config}>
           <AppLayout>{children}</AppLayout>
-      </ConfigProvider>,
+      </ConfigProvider>
       </body>
     </html>
   )

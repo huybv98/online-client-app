@@ -1,8 +1,9 @@
 @import '../fonts/font';
+@import './antd';
 @import './taiwindcss';
 @import './variables';
 @import './default';
-@import './custom';
+@import './common';
 
 @import './button';
 @import './checkbox';
@@ -16,3 +17,4 @@
 @import './select';
 @import './tabs';
 @import './table';
+@import './custom';
