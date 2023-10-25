@@ -15,5 +15,7 @@
   "question-manage.breadcrumbText": "Quản lý câu hỏi",
 
   "history-exam.title": "Lịch sử thi",
-  "history-exam.breadcrumbText": "Lịch sử thi"
+  "history-exam.breadcrumbText": "Lịch sử thi",
+
+  "user.title": "Đăng nhập"
 }

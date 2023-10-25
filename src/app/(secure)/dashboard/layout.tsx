@@ -7,11 +7,11 @@ export const metadata: Metadata = {
     title: t('dashboard.title'),
 }
 
-const PageLayout = ({children,}: { children: React.ReactNode }) => {
+const PageLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <section>
-            {children}
-        </section>
+        <div className='wrapper'>
+            { children }
+        </div>
     )
 }
 export default PageLayout

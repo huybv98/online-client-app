@@ -1,6 +1,6 @@
 .app-table {
   background: $background-white;
-  box-shadow: drop-shadow(0 0 10px rgb(0 0 0 / 0.05));
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.05);
 
 
   .app-table-head {
@@ -17,6 +17,10 @@
     tfoot > tr > th,
     tfoot > tr > td {
       padding: 9px 8px;
+    }
+
+    .ant-table-pagination.ant-pagination {
+      margin-bottom: 0;
     }
   }
 }

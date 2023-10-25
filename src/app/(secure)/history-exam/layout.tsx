@@ -4,14 +4,14 @@ import {useTranslation} from "@/locales/index";
 const { t } = await useTranslation()
 
 export const metadata: Metadata = {
-    title: t('user.title'),
+    title: t('history-exam.title'),
 }
 
-const PageLayout = ({children,}: { children: React.ReactNode }) => {
+const PageLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <section>
-            {children}
-        </section>
+        <div className='wrapper'>
+            { children }
+        </div>
     )
 }
 export default PageLayout

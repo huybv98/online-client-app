@@ -10,6 +10,7 @@
   .ant-layout-header {
     padding: 0;
   }
+
   .header {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 
@@ -74,6 +75,7 @@
     padding: $content-padding;
     min-height: calc(100vh - (#{$layout-height} * 2));
     font-family: $font-family;
+    position: relative;
   }
 
   .ant-layout-footer {
@@ -82,5 +84,43 @@
 
   .footer {
     box-shadow: inset 0 1px 0 #e8e8e8;
+  }
+}
+
+.app-auth-layout.ant-layout {
+  max-height: 100vh;
+  overflow-y: auto;
+
+  .container-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper {
+      max-width: 30rem;
+      width: 100%;
+      margin: 0 1rem;
+
+      .wrapper-logo {
+        margin-top: 2rem;
+      }
+
+      .wrapper-login {
+        background: $background-white;
+        margin: 2rem 0;
+        padding: 1.5rem;
+
+        .wrapper-title {
+          margin-bottom: 1.5rem;
+          text-align: center;
+
+          .form-title {
+            margin-bottom: 8px;
+            @extend .F24B36;
+          }
+        }
+      }
+    }
   }
 }

@@ -11,5 +11,5 @@ export default function StyledComponentsRegistry({ children }: { children: React
     <style id="antd" dangerouslySetInnerHTML={{__html: extractStyle(cache, true)}}/>
   ));
 
-  return <StyleProvider cache={cache}>{children}</StyleProvider>;
+  return <StyleProvider cache={cache}>{ children }</StyleProvider>;
 }

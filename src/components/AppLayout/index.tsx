@@ -8,15 +8,18 @@ import SideMenu from '@/components/AppMenu/SideMenu'
 import { Background, Colors, LayoutHeight } from '@/assets/style/variables'
 
 const { Header, Footer, Sider, Content } = Layout
+
 const Style: React.CSSProperties = {
   backgroundColor: Background.white,
   color: Colors.primary,
 }
+
 const siderStyle: React.CSSProperties = {
   backgroundColor: Background.white,
   minHeight: '100vh',
   color: Colors.primary,
 }
+
 const headerStyle: React.CSSProperties = {
   backgroundColor: Background.white,
   height: LayoutHeight.Height,
@@ -27,6 +30,7 @@ const headerStyle: React.CSSProperties = {
 const contentStyle :React.CSSProperties = {
   backgroundColor: Background.primary,
 }
+
 const footerStyle: React.CSSProperties = {
   backgroundColor: Background.white,
   height: LayoutHeight.Height,
@@ -59,7 +63,7 @@ const AppLayout = ({ children }: Props)=> {
               <div className="inner-layout">
                 <Content style={contentStyle}>
                   <div className="content">
-                    {children}
+                    { children }
                   </div>
                 </Content>
                 <Footer style={footerStyle} className="p-0">
