@@ -6,6 +6,8 @@ import type { ThemeConfig } from 'antd';
 import { ConfigProvider } from "antd";
 import { GlobalFont } from "@/assets/style/variables";
 import StyledComponentsRegistry from '@/utils/AntdRegistry'
+import viVN from 'antd/locale/vi_VN';
+import { validateMessages } from '@/constants/validation'
 
 export const metadata: Metadata = {
     title: {
@@ -27,7 +29,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>  {
     <html lang={lng} dir={dir(lng)}>
       <body>
       <StyledComponentsRegistry>
-          <ConfigProvider theme={config}>
+          <ConfigProvider theme={config} locale={viVN} form={{ validateMessages }}>
               { children }
           </ConfigProvider>
       </StyledComponentsRegistry>

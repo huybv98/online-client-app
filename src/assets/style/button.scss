@@ -13,3 +13,8 @@
     @extend .color-bg-secondary
   }
 }
+
+.app-button.ant-btn {
+  height: 40px;
+  padding: 9px 15px;
+}

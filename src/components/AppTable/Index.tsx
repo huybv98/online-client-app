@@ -1,8 +1,9 @@
 "use client"
 
-import {Input, Table} from "antd";
+import { Table} from "antd";
 import {columnsType} from "@/types/table";
 import AppSvgIcon from "@/components/AppSvgIcon";
+import AppInput from "@/AppInput/index";
 
 interface Props {
     dataSource: Array<any>
@@ -34,7 +35,7 @@ const AppTable = ({...props}: Props) => {
                                 </div>
                                 <div className='app-table-head-extra flex ml-auto'>
                                     <div className='app-input app-input-search mr-4 min-w-[280px]'>
-                                        <Input placeholder="Tìm kiếm nhanh"/>
+                                        <AppInput placeholder="Tìm kiếm nhanh"/>
                                     </div>
                                     <div className='flex items-center'>
                                         <div className='cursor-pointer mr-2'>
