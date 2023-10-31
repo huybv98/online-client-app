@@ -3,11 +3,13 @@
 import { Input } from "antd";
 
 interface Props {
-    type?: 'text' | 'password' | 'textarea' | 'number'
+    type?: 'text' | 'password' | 'textarea' | 'number',
+    placeholder?: string
 }
 
 const defaultProps = {
-    type: 'text'
+    type: 'text',
+    placeholder: ''
 }
 
 const AppInput = ({ ...props }: Props)=> {

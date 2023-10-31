@@ -1,22 +1,24 @@
 "use client"
 
 import AppLogo from "@/components/AppMenu/AppLogo";
-import {Button, Form, Input, Col, Row, Checkbox, Divider} from "antd";
+import { Form, Col, Row, Checkbox, Divider} from "antd";
 import { useTranslation } from "@/locales/client";
 import AppInput from "@/components/AppInput";
+import AppButton from "@/components/AppButton";
+import AppCheckbox from "@/components/AppCheckbox";
 import { RULES_REQUIRED } from "@/constants/validation";
 
 
 const PageAuth = () => {
     const { t } = useTranslation('translation')
-
+    const [form] = Form.useForm()
     const rulesForm = {
         username: [RULES_REQUIRED],
         password: [RULES_REQUIRED]
     }
 
     const onFinish = (values: any) => {
-        console.log('Received values of form: ', values);
+        console.log('values', values);
     }
 
     return (
@@ -29,11 +31,11 @@ const PageAuth = () => {
                     <div className='wrapper-login'>
                         <div className="wrapper-title">
                             <div className='form-title'>{ t('user.title') }</div>
-                            <div className="text">Bạn chưa có tài khoản giáo viên?
+                            <div className="text">Bạn chưa có tài khoản?
                                 <a className="register" href="/register">Đăng ký ngay</a>
                             </div>
                         </div>
-                        <Form className='form-login' layout="vertical" autoComplete="off" onFinish={onFinish}>
+                        <Form form={form} lassName='form-login' layout="vertical" autoComplete="off" onFinish={onFinish}>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
                                     <Form.Item name="username" label="Tên đăng nhập" rules={rulesForm.username}>
@@ -51,16 +53,14 @@ const PageAuth = () => {
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
                                     <Form.Item name="remember" valuePropName="checked">
-                                        <Checkbox>Lưu mật khẩu </Checkbox>
+                                        <AppCheckbox>Lưu mật khẩu </AppCheckbox>
                                     </Form.Item>
                                 </Col>
                             </Row>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
                                     <Form.Item>
-                                        <Button type="primary" htmlType="submit" className='app-button w-full'>
-                                            Đăng nhập
-                                        </Button>
+                                        <AppButton type="primary" htmlType="submit">Đăng nhập</AppButton>
                                     </Form.Item>
                                 </Col>
                             </Row>
@@ -74,16 +74,12 @@ const PageAuth = () => {
                             <Row gutter={16}>
                                 <Col xs={24} md={12} lg={12}>
                                     <Form.Item>
-                                        <Button className='app-button w-full'>
-                                            Facebook
-                                        </Button>
+                                        <AppButton>Facebook</AppButton>
                                     </Form.Item>
                                 </Col>
                                 <Col xs={24} md={12} lg={12}>
                                     <Form.Item>
-                                        <Button className='app-button w-full'>
-                                            Google
-                                        </Button>
+                                        <AppButton>Google</AppButton>
                                     </Form.Item>
                                 </Col>
                             </Row>
