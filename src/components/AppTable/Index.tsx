@@ -3,7 +3,8 @@
 import { Table} from "antd";
 import {columnsType} from "@/types/table";
 import AppSvgIcon from "@/components/AppSvgIcon";
-import AppInput from "@/AppInput/index";
+import AppInput from "@/components/AppInput";
+import { useTranslation } from "@/locales/client";
 
 interface Props {
     dataSource: Array<any>
@@ -22,6 +23,7 @@ const defaultProps = {
 
 const AppTable = ({...props}: Props) => {
     const { title, dataSource, columns, visibleFullScreen, rowKey } = { ...defaultProps, ...props }
+    const { t } = useTranslation('translation')
 
     return (
         <>
@@ -31,7 +33,7 @@ const AppTable = ({...props}: Props) => {
                         <div className='app-table-head p-4'>
                             <div className='app-table-head-wrapper flex items-center'>
                                 <div className='app-table-head-title'>
-                                    <div className='flex'>{ title }</div>
+                                    <div className='flex'>{ title || t('table.title') }</div>
                                 </div>
                                 <div className='app-table-head-extra flex ml-auto'>
                                     <div className='app-input app-input-search mr-4 min-w-[280px]'>

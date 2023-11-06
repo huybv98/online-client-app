@@ -1,6 +1,7 @@
 {
   "welcome": "Welcome",
   "home": "home",
+  "table.title": "Kết quả tìm kiếm",
 
   "dashboard.title": "Dashboard",
   "dashboard.breadcrumbText": "Dashboard",
@@ -17,5 +18,9 @@
   "history-exam.title": "Lịch sử thi",
   "history-exam.breadcrumbText": "Lịch sử thi",
 
-  "user.title": "Đăng nhập"
+  "user.title": "Đăng nhập",
+  "user.button-submit": "Đăng nhập",
+  "user.save-password": "Lưu mật khẩu",
+  "user.username": "Tên đăng nhập",
+  "user.password": "Mật khẩu"
 }

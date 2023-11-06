@@ -2,8 +2,11 @@
 
 import AppTable from "@/components/AppTable";
 import { useTranslation } from '@/locales/client'
+import { Pagination } from "@/types/table";
+import PAGINATION from "@/constants/pagination";
 
 const Dashboard = () => {
+    const { t } = useTranslation('translation')
     const dataSource = [
         {
             id: 1,
@@ -97,11 +100,12 @@ const Dashboard = () => {
             align: 'center'
         }
     ]
-    const { t } = useTranslation('translation')
+    const pagination: Pagination = { ...PAGINATION }
+
     return (
         <>
             <div>Tổng quan { t('welcome') }</div>
-            <AppTable title={'Danh sách'} dataSource={dataSource} columns={columns}/>
+            <AppTable dataSource={dataSource} columns={columns} pagination={pagination}/>
         </>
     )
 }

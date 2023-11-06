@@ -38,14 +38,14 @@ const PageAuth = () => {
                         <Form form={form} lassName='form-login' layout="vertical" autoComplete="off" onFinish={onFinish}>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
-                                    <Form.Item name="username" label="Tên đăng nhập" rules={rulesForm.username}>
+                                    <Form.Item name="username" label={ t('user.username') } rules={rulesForm.username}>
                                         <AppInput/>
                                     </Form.Item>
                                 </Col>
                             </Row>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
-                                    <Form.Item name="password" label="Mật khẩu" rules={rulesForm.password}>
+                                    <Form.Item name="password" label={ t('user.password') } rules={rulesForm.password}>
                                         <AppInput type={'password'}/>
                                     </Form.Item>
                                 </Col>
@@ -53,14 +53,14 @@ const PageAuth = () => {
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
                                     <Form.Item name="remember" valuePropName="checked">
-                                        <AppCheckbox>Lưu mật khẩu </AppCheckbox>
+                                        <AppCheckbox>{ t('user.save-password') }</AppCheckbox>
                                     </Form.Item>
                                 </Col>
                             </Row>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
                                     <Form.Item>
-                                        <AppButton type="primary" htmlType="submit">Đăng nhập</AppButton>
+                                        <AppButton type="primary" htmlType="submit">{ t('user.button-submit') }</AppButton>
                                     </Form.Item>
                                 </Col>
                             </Row>
