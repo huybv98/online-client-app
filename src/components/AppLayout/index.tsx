@@ -6,6 +6,8 @@ import AppGlobalHeader from '@/components/AppGlobalHeader/Index'
 import AppGlobalFooter from '@/components/AppGlobalFooter/Index'
 import SideMenu from '@/components/AppMenu/SideMenu'
 import { Background, Colors, LayoutHeight } from '@/assets/style/variables'
+import { auth } from '@/utils/auth'
+import { usePathname, useRouter } from 'next/navigation'
 
 const { Header, Footer, Sider, Content } = Layout
 
@@ -44,10 +46,14 @@ interface Props {
 
 const AppLayout = ({ children }: Props)=> {
   const [visible, setVisible] = useState<boolean>(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   const handleChangeVisible = (visible: boolean) => {
     setVisible(visible)
   }
+
+  auth.handleRedirect(router, pathname)
 
   return (
       <>

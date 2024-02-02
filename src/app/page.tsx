@@ -1,15 +1,17 @@
+"use client"
+
 import Image from 'next/image'
 // import Dashboard from '@/app/dashboard/page'
 import AppDevelop from '@/components/AppDevelop'
-import {redirect} from "next/navigation";
-import {auth} from "../utils/auth";
+import { auth } from '@/utils/auth'
+import { usePathname, useRouter } from 'next/navigation'
 
 export default function Home() {
-    if (!auth.isAuthenticated()) {
-        redirect('/user/login')
-    } else {
-        redirect('/dashboard')
-    }
+  const router = useRouter()
+  const pathname = usePathname()
+
+  auth.handleRedirect(router, pathname)
+
   const open = true
     return (
        <>

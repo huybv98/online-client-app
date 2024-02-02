@@ -9,3 +9,9 @@
 .app-divider.ant-divider-horizontal.ant-divider-with-text.ant-divider {
   margin: 0;
 }
+
+.custom-dropdown-avatar.ant-dropdown {
+  .ant-dropdown-menu {
+    margin-top: 15px;
+  }
+}

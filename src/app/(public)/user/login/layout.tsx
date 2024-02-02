@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 }
 
 const PageAuthLayout = ({ children }: { children: React.ReactNode }) => {
+
     return (
         <AppAuthLayout>
             { children }

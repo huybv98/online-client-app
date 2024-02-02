@@ -1,18 +1,21 @@
 "use client"
 
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
-import {Avatar, Dropdown, MenuProps, Tooltip} from 'antd'
+import { Avatar, Dropdown, MenuProps, Tooltip } from 'antd'
 import {
   BellIcon,
   Cog8ToothIcon,
   EllipsisHorizontalCircleIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/react/24/outline'
+import { auth } from '@/utils/auth'
+import { usePathname, useRouter } from 'next/navigation'
 
 interface Props {
   visible: boolean
   onChangeVisible: (value: boolean) => void
 }
+
 const defaultProps = {
   visible: false,
 }
@@ -23,22 +26,43 @@ const AppGlobalHeader = ({ ...props }: Props) => {
   const items: MenuProps['items'] = [
     {
       label: 'Tài khoản cá nhân',
-      key: '0',
+      key: 'USER_ACCOUNT',
     },
     {
       label: 'Đăng xuất',
-      key: '1',
+      key: 'SIGN_OUT',
     }
-  ];
+  ]
+  const router = useRouter()
+  const pathname = usePathname()
 
   const handleClickVisible = () => {
     onChangeVisible(!visible)
   }
 
+  const handleMenuClick: MenuProps['onClick'] = ({key}) => {
+    if (key === 'USER_ACCOUNT') {
+      handleUserAccount()
+    } else if (key === 'SIGN_OUT') {
+      handleSignOut()
+    }
+  }
+
+  const handleUserAccount = () => {
+    console.log('handleUserAccount')
+  }
+
+  const handleSignOut = () => {
+    const isSuccess = auth.signOutSuccess()
+    if(isSuccess){
+      auth.handleRedirect(router, pathname)
+    }
+  }
+
   return (
     <>
       <div className="header flex relative px-6">
-        <div className="flex justify-center items-center" onClick={handleClickVisible}>
+        <div className="flex justify-center items-center" onClick={ handleClickVisible }>
           {visible ? (
             <MenuUnfoldOutlined className="trigger" />
           ) : (
@@ -76,9 +100,8 @@ const AppGlobalHeader = ({ ...props }: Props) => {
               </Tooltip>
             </div>
             <div className="header-avatar">
-
-              <Dropdown menu={{ items }} trigger={['click']}>
-                <Avatar size="small" className="avatar">
+              <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={['click']} overlayClassName='custom-dropdown-avatar'>
+                <Avatar size="small" className="avatar" onClick={(e) => e.preventDefault()}>
                   BVH
                 </Avatar>
               </Dropdown>

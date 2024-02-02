@@ -1,23 +1,56 @@
-// import jwt from 'jsonwebtoken';
-// import { cookies } from 'next/headers';
+"use client"
 
-export const auth = {
-    isAuthenticated,
-    // verifyToken
-}
+import { ACCESS_TOKEN, REFRESH_TOKEN, USER_INFO } from "@/store/key-types";
+import { usePathname, useRouter } from 'next/navigation'
 
-function isAuthenticated() {
+const loginSuccess = (res) => {
     try {
-        // verifyToken();
+        localStorage.setItem(ACCESS_TOKEN, res.tokens.accessToken)
+        localStorage.setItem(REFRESH_TOKEN, res.tokens.refreshToken)
+        localStorage.setItem(USER_INFO,  JSON.stringify(res.user))
         return true;
     } catch {
-        return true;
+        return false;
     }
 }
 
-function verifyToken() {
-    // const token = cookies().get('authorization')?.value ?? '';
-    // const decoded = jwt.verify(token, process.env.JWT_SECRET!);
-    // const id = decoded.sub as string;
-    // return id;
+const signOutSuccess = () => {
+    try {
+        localStorage.removeItem(ACCESS_TOKEN)
+        localStorage.removeItem(REFRESH_TOKEN)
+        localStorage.removeItem(USER_INFO)
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+const verifyToken = () => {
+    const token = localStorage.getItem(ACCESS_TOKEN)
+    return !!token;
+}
+
+const isAuthenticated = () =>{
+    try {
+        return verifyToken();
+    } catch {
+        return false;
+    }
+}
+
+const handleRedirect = (router, pathname) => {
+    if (!isAuthenticated()) {
+        const url = pathname !== '/user/login' ? '/user/login' : pathname
+        router.push(url)
+    } else {
+        const url = pathname && pathname !== '/' && pathname !== '/user/login' ? pathname : '/dashboard'
+        router.push(url)
+    }
+}
+
+export const auth = {
+    loginSuccess,
+    signOutSuccess,
+    isAuthenticated,
+    handleRedirect
 }

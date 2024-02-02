@@ -8,6 +8,8 @@ interface Props {
 
 import { Layout } from 'antd'
 import urlBgLogin from '@/assets/images/bg_page_login.png'
+import { auth } from '@/utils/auth'
+import { usePathname, useRouter } from 'next/navigation'
 
 const Style: React.CSSProperties = {
     backgroundColor: Background.primary,
@@ -17,16 +19,18 @@ const Style: React.CSSProperties = {
     backgroundSize: "cover"
 }
 
-const AppAuthLayout = ({ children }: Props)=> {
+const AppAuthLayout = ({children}: Props) => {
+    const router = useRouter()
+    const pathname = usePathname()
+    auth.handleRedirect(router, pathname)
 
-
-  return (
-    <div className='app-page'>
-        <Layout style={Style} className='app-auth-layout' >
-            { children }
-        </Layout>
-    </div>
-  )
+    return (
+        <div className='app-page'>
+            <Layout style={Style} className='app-auth-layout'>
+                {children}
+            </Layout>
+        </div>
+    )
 }
 
 export default AppAuthLayout

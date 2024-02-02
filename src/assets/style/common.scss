@@ -111,7 +111,7 @@
         background: $background-white;
         margin: 2rem 0;
         padding: 1.5rem;
-        box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.2);
+        box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, .2);
         border-radius: 8px;
 
         .wrapper-title {
@@ -122,6 +122,7 @@
             margin-bottom: 8px;
             @extend .F24B36;
           }
+
           .register {
             margin-left: 5px;
           }

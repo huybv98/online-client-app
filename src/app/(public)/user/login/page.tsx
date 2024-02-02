@@ -7,18 +7,37 @@ import AppInput from "@/components/AppInput";
 import AppButton from "@/components/AppButton";
 import AppCheckbox from "@/components/AppCheckbox";
 import { RULES_REQUIRED } from "@/constants/validation";
-
+import { userLogin } from "@/services/auth";
+import { auth } from '@/utils/auth'
+import { usePathname, useRouter } from 'next/navigation'
 
 const PageAuth = () => {
+    const router = useRouter()
+    const pathname = usePathname()
     const { t } = useTranslation('translation')
     const [form] = Form.useForm()
     const rulesForm = {
-        username: [RULES_REQUIRED],
-        password: [RULES_REQUIRED]
+        // username: [RULES_REQUIRED],
+        password: [RULES_REQUIRED],
+        email: [RULES_REQUIRED],
+        isRemember: []
     }
 
-    const onFinish = (values: any) => {
-        console.log('values', values);
+    const onFinish = async (values: any) => {
+        console.log('values', values)
+        const params = {
+            ...values,
+            email: "huycoi@gmail.com",
+            password: "Chien1158",
+            isRemember: true
+        }
+        const res = await userLogin(params)
+        if(res && res.metadata){
+            const isSuccess = auth.loginSuccess(res.metadata)
+            if(isSuccess){
+                auth.handleRedirect(router, pathname)
+            }
+        }
     }
 
     return (
@@ -35,10 +54,17 @@ const PageAuth = () => {
                                 <a className="register" href="/register">Đăng ký ngay</a>
                             </div>
                         </div>
-                        <Form form={form} lassName='form-login' layout="vertical" autoComplete="off" onFinish={onFinish}>
+                        <Form form={form} className='form-login' layout="vertical" autoComplete="off" onFinish={onFinish}>
+                            {/*<Row gutter={16}>*/}
+                            {/*    <Col xs={24} md={24} lg={24}>*/}
+                            {/*        <Form.Item name="username" label={ t('user.username') } rules={rulesForm.username}>*/}
+                            {/*            <AppInput/>*/}
+                            {/*        </Form.Item>*/}
+                            {/*    </Col>*/}
+                            {/*</Row>*/}
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
-                                    <Form.Item name="username" label={ t('user.username') } rules={rulesForm.username}>
+                                    <Form.Item name="email" label={ t('user.email') } rules={rulesForm.email}>
                                         <AppInput/>
                                     </Form.Item>
                                 </Col>
@@ -52,7 +78,7 @@ const PageAuth = () => {
                             </Row>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
-                                    <Form.Item name="remember" valuePropName="checked">
+                                    <Form.Item name="isRemember" valuePropName="checked">
                                         <AppCheckbox>{ t('user.save-password') }</AppCheckbox>
                                     </Form.Item>
                                 </Col>
