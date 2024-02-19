@@ -13,7 +13,7 @@ const SideMenu = ({ ...props }) => {
 
   return (
     <>
-      <div className="side-menu">
+      <div className='side-menu'>
         <AppLogo showLogo={visible} />
         <AppMenu menu={AppMenuArray} />
       </div>

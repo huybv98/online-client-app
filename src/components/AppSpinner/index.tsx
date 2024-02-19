@@ -12,9 +12,9 @@ const AppSpinner = ({...props}) => {
     const {loading, type} = props
 
     const Spinner = () => (
-        <div className="ui-spinner">
-            <div className="ui-spinner__loader">
-                <img src={url} alt="spinner"/>
+        <div className='ui-spinner'>
+            <div className='ui-spinner__loader'>
+                <img src={url} alt='spinner'/>
             </div>
         </div>
     )

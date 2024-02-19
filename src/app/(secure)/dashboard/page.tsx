@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import AppTable from "@/components/AppTable";
+import AppTable from '@/components/AppTable'
 import { useTranslation } from '@/locales/client'
-import { Pagination } from "@/types/table";
-import PAGINATION from "@/constants/pagination";
+import { Pagination } from '@/types/table'
+import PAGINATION from '@/constants/pagination'
 
 const Dashboard = () => {
     const { t } = useTranslation('translation')

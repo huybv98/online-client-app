@@ -65,16 +65,16 @@ const AppLayout = ({ children }: Props)=> {
               <SideMenu visible={visible} />
             </Sider>
             <Layout style={Style} className='app-layout-item'>
-              <Header style={headerStyle} className="p-0">
+              <Header style={headerStyle} className='p-0'>
                 <AppGlobalHeader visible={visible} onChangeVisible={handleChangeVisible} />
               </Header>
-              <div className="inner-layout">
+              <div className='inner-layout'>
                 <Content style={contentStyle}>
-                  <div className="content">
+                  <div className='content'>
                     { children }
                   </div>
                 </Content>
-                <Footer style={footerStyle} className="p-0">
+                <Footer style={footerStyle} className='p-0'>
                   <AppGlobalFooter />
                 </Footer>
               </div>

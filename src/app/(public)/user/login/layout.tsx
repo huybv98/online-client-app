@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import { useTranslation } from "@/locales/index";
-import AppAuthLayout from "@/components/AppAuthLayout/index";
+import { Metadata } from 'next';
+import { useTranslation } from '@/locales/index';
+import AppAuthLayout from '@/components/AppAuthLayout/index';
 
 const { t } = await useTranslation()
 

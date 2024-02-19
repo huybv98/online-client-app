@@ -23,7 +23,7 @@ export function detectLanguage() {
     const hders = headers()
     let lng
     const nextUrlHeader = hders.has('next-url') && hders.get('next-url')
-    if (nextUrlHeader && nextUrlHeader.indexOf(`"lng":"`) > -1) {
+    if (nextUrlHeader && nextUrlHeader.indexOf(`'lng':'`) > -1) {
         const qsObj = JSON.parse(nextUrlHeader.substring(nextUrlHeader.indexOf('{'), nextUrlHeader.indexOf(`}`) + 1))
         lng = qsObj.lng
     }

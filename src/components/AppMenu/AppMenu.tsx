@@ -1,12 +1,12 @@
 "use client"
 
 import { Menu } from 'antd'
-import {useEffect, useState} from "react";
+import {useEffect, useState} from 'react';
 import { MenuItem, MenuObject } from '@/types/menu'
 import type { MenuProps } from 'antd'
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 import { useTranslation } from '@/locales/client'
-import AppSvgIcon from "@/components/AppSvgIcon/index";
+import AppSvgIcon from '@/components/AppSvgIcon/index';
 
 const getItem = (
     label: React.ReactNode,
@@ -62,14 +62,14 @@ const AppMenu = ({...props}) => {
 
     return (
         <>
-            <div className="app-menu">
+            <div className='app-menu'>
                 {MenuItems && (
                     <>
-                        <div className="sidebar-collapse">
+                        <div className='sidebar-collapse'>
                             <Menu
                                 defaultSelectedKeys={[current]}
-                                mode="inline"
-                                theme="light"
+                                mode='inline'
+                                theme='light'
                                 items={MenuItems}
                                 onClick={handleClick}
                             />

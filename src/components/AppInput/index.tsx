@@ -1,6 +1,6 @@
 "use client"
 
-import { Input } from "antd";
+import { Input } from 'antd';
 
 interface Props {
     type?: 'text' | 'password' | 'textarea' | 'number',

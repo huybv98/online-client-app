@@ -1,5 +1,5 @@
-import {Metadata} from "next";
-import {useTranslation} from "@/locales/index";
+import {Metadata} from 'next';
+import {useTranslation} from '@/locales/index';
 
 const {t} = await useTranslation()
 

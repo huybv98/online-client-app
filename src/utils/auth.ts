@@ -1,6 +1,6 @@
 "use client"
 
-import { ACCESS_TOKEN, REFRESH_TOKEN, USER_INFO } from "@/store/key-types";
+import { ACCESS_TOKEN, REFRESH_TOKEN, USER_INFO } from '@/store/key-types'
 import { usePathname, useRouter } from 'next/navigation'
 
 const loginSuccess = (res) => {
@@ -8,9 +8,9 @@ const loginSuccess = (res) => {
         localStorage.setItem(ACCESS_TOKEN, res.tokens.accessToken)
         localStorage.setItem(REFRESH_TOKEN, res.tokens.refreshToken)
         localStorage.setItem(USER_INFO,  JSON.stringify(res.user))
-        return true;
+        return true
     } catch {
-        return false;
+        return false
     }
 }
 
@@ -19,22 +19,22 @@ const signOutSuccess = () => {
         localStorage.removeItem(ACCESS_TOKEN)
         localStorage.removeItem(REFRESH_TOKEN)
         localStorage.removeItem(USER_INFO)
-        return true;
+        return true
     } catch {
-        return false;
+        return false
     }
 }
 
 const verifyToken = () => {
     const token = localStorage.getItem(ACCESS_TOKEN)
-    return !!token;
+    return !!token
 }
 
 const isAuthenticated = () =>{
     try {
-        return verifyToken();
+        return verifyToken()
     } catch {
-        return false;
+        return false
     }
 }
 

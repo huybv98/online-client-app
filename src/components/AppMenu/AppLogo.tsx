@@ -14,11 +14,11 @@ const AppLogo = ({...props}) => {
             <div className={`logo flex items-center cursor-pointer ${props.className}`} onClick={() => handleClick()}>
                 {showLogo ? (
                     <>
-                        <img src={urlEmptyWhite.src} alt="logo" className=""/>
+                        <img src={urlEmptyWhite.src} alt='logo' className=''/>
                     </>
                 ) : (
                     <>
-                        <img src={url.src} alt="logo" className=""/>
+                        <img src={url.src} alt='logo' className=''/>
                     </>
                 )
                 }

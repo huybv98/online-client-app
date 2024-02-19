@@ -1,6 +1,6 @@
 "use client"
 
-import { Checkbox } from "antd";
+import { Checkbox } from 'antd';
 
 interface Props {
 }

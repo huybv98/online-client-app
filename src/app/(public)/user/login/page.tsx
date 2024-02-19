@@ -1,13 +1,13 @@
 "use client"
 
-import AppLogo from "@/components/AppMenu/AppLogo";
-import { Form, Col, Row, Checkbox, Divider} from "antd";
-import { useTranslation } from "@/locales/client";
-import AppInput from "@/components/AppInput";
-import AppButton from "@/components/AppButton";
-import AppCheckbox from "@/components/AppCheckbox";
-import { RULES_REQUIRED } from "@/constants/validation";
-import { userLogin } from "@/services/auth";
+import AppLogo from '@/components/AppMenu/AppLogo'
+import { Form, Col, Row, Checkbox, Divider} from 'antd'
+import { useTranslation } from '@/locales/client'
+import AppInput from '@/components/AppInput'
+import AppButton from '@/components/AppButton'
+import AppCheckbox from '@/components/AppCheckbox'
+import { RULES_REQUIRED } from '@/constants/validation'
+import { userLogin } from '@/services/auth'
 import { auth } from '@/utils/auth'
 import { usePathname, useRouter } from 'next/navigation'
 
@@ -27,8 +27,8 @@ const PageAuth = () => {
         console.log('values', values)
         const params = {
             ...values,
-            email: "huycoi@gmail.com",
-            password: "Chien1158",
+            email: 'huycoi@gmail.com',
+            password: 'Chien1158',
             isRemember: true
         }
         const res = await userLogin(params)
@@ -48,37 +48,37 @@ const PageAuth = () => {
                         <AppLogo className='justify-center'/>
                     </div>
                     <div className='wrapper-login'>
-                        <div className="wrapper-title">
+                        <div className='wrapper-title'>
                             <div className='form-title'>{ t('user.title') }</div>
-                            <div className="text">Bạn chưa có tài khoản?
-                                <a className="register" href="/register">Đăng ký ngay</a>
+                            <div className='text'>Bạn chưa có tài khoản?
+                                <a className='register' href='/register'>Đăng ký ngay</a>
                             </div>
                         </div>
-                        <Form form={form} className='form-login' layout="vertical" autoComplete="off" onFinish={onFinish}>
+                        <Form form={form} className='form-login' layout='vertical' autoComplete='off' onFinish={onFinish}>
                             {/*<Row gutter={16}>*/}
                             {/*    <Col xs={24} md={24} lg={24}>*/}
-                            {/*        <Form.Item name="username" label={ t('user.username') } rules={rulesForm.username}>*/}
+                            {/*        <Form.Item name='username' label={ t('user.username') } rules={rulesForm.username}>*/}
                             {/*            <AppInput/>*/}
                             {/*        </Form.Item>*/}
                             {/*    </Col>*/}
                             {/*</Row>*/}
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
-                                    <Form.Item name="email" label={ t('user.email') } rules={rulesForm.email}>
+                                    <Form.Item name='email' label={ t('user.email') } rules={rulesForm.email}>
                                         <AppInput/>
                                     </Form.Item>
                                 </Col>
                             </Row>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
-                                    <Form.Item name="password" label={ t('user.password') } rules={rulesForm.password}>
+                                    <Form.Item name='password' label={ t('user.password') } rules={rulesForm.password}>
                                         <AppInput type={'password'}/>
                                     </Form.Item>
                                 </Col>
                             </Row>
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
-                                    <Form.Item name="isRemember" valuePropName="checked">
+                                    <Form.Item name='isRemember' valuePropName='checked'>
                                         <AppCheckbox>{ t('user.save-password') }</AppCheckbox>
                                     </Form.Item>
                                 </Col>
@@ -86,7 +86,7 @@ const PageAuth = () => {
                             <Row gutter={16}>
                                 <Col xs={24} md={24} lg={24}>
                                     <Form.Item>
-                                        <AppButton type="primary" htmlType="submit">{ t('user.button-submit') }</AppButton>
+                                        <AppButton type='primary' htmlType='submit'>{ t('user.button-submit') }</AppButton>
                                     </Form.Item>
                                 </Col>
                             </Row>

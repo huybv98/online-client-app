@@ -23,7 +23,7 @@ export function middleware(req) {
     // const lng = lngInSearchParams || lngInCookie || lngInAcceptHeader || fallbackLng
 
     const response = NextResponse.next()
-    // if ((nextUrlHeader && nextUrlHeader.indexOf(`"lng":"${lng}"`) > -1) || !lngInCookie) {
+    // if ((nextUrlHeader && nextUrlHeader.indexOf(`'lng':'${lng}'`) > -1) || !lngInCookie) {
     if (lngInCookie !== lng) {
         response.cookies.set(cookieName, lng)
     }

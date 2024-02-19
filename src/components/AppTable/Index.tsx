@@ -1,10 +1,10 @@
 "use client"
 
-import { Table} from "antd";
-import {columnsType} from "@/types/table";
-import AppSvgIcon from "@/components/AppSvgIcon";
-import AppInput from "@/components/AppInput";
-import { useTranslation } from "@/locales/client";
+import { Table} from 'antd'
+import { columnsType } from '@/types/table'
+import AppSvgIcon from '@/components/AppSvgIcon'
+import AppInput from '@/components/AppInput'
+import { useTranslation } from '@/locales/client'
 
 interface Props {
     dataSource: Array<any>
@@ -29,7 +29,7 @@ const AppTable = ({...props}: Props) => {
         <>
             {
                 !visibleFullScreen ? (
-                    <div className="app-table">
+                    <div className='app-table'>
                         <div className='app-table-head p-4'>
                             <div className='app-table-head-wrapper flex items-center'>
                                 <div className='app-table-head-title'>
@@ -37,17 +37,17 @@ const AppTable = ({...props}: Props) => {
                                 </div>
                                 <div className='app-table-head-extra flex ml-auto'>
                                     <div className='app-input app-input-search mr-4 min-w-[280px]'>
-                                        <AppInput placeholder="Tìm kiếm nhanh"/>
+                                        <AppInput placeholder='Tìm kiếm nhanh'/>
                                     </div>
                                     <div className='flex items-center'>
                                         <div className='cursor-pointer mr-2'>
-                                            <AppSvgIcon name="ArrowPathIcon"/>
+                                            <AppSvgIcon name='ArrowPathIcon'/>
                                         </div>
                                         <div className='cursor-pointer mr-2'>
-                                            <AppSvgIcon name="ArrowsPointingOutIcon"/>
+                                            <AppSvgIcon name='ArrowsPointingOutIcon'/>
                                         </div>
                                         <div className='cursor-pointer'>
-                                            <AppSvgIcon name="Cog6ToothIcon"/>
+                                            <AppSvgIcon name='Cog6ToothIcon'/>
                                         </div>
                                     </div>
                                 </div>

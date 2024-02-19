@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect} from "react";
+import React, {useEffect} from 'react';
 import * as OIcons from '@heroicons/react/24/outline'
 import * as SIcons from '@heroicons/react/24/solid'
 
@@ -52,7 +52,7 @@ const AppSvgIcon = ({ ...props }: Props) => {
     return (
         <>
             <div className={`app-svg-icon ${className || ''}`}>
-                <SvgIcon aria-hidden="true" className={cls} style={Style} />
+                <SvgIcon aria-hidden='true' className={cls} style={Style} />
             </div>
         </>
     )

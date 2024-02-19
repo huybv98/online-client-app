@@ -16,8 +16,8 @@ const Style: React.CSSProperties = {
     backgroundColor: Background.primary,
     color: Colors.primary,
     backgroundImage: `url('${urlBgLogin.src}')`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover"
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
 }
 
 const AppAuthLayout = ({children}: Props) => {

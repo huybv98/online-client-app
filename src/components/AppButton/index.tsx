@@ -1,6 +1,6 @@
 "use client"
 
-import {Button, Input} from "antd";
+import {Button, Input} from 'antd';
 
 interface Props {
     type?: 'primary' | 'dashed' | 'text' | 'link'
