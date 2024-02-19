@@ -1,4 +1,4 @@
-import {MenuObject} from "@/types/menu";
+import { MenuObject } from "@/types/menu";
 import { Dashboard, ExamManage, HistoryExam, QuestionManage, SourseManage } from "@/locales/index";
 
 const AppMenuArray: Array<MenuObject> = [

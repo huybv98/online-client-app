@@ -10,6 +10,7 @@ import { Layout } from 'antd'
 import urlBgLogin from '@/assets/images/bg_page_login.png'
 import { auth } from '@/utils/auth'
 import { usePathname, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const Style: React.CSSProperties = {
     backgroundColor: Background.primary,
@@ -22,7 +23,9 @@ const Style: React.CSSProperties = {
 const AppAuthLayout = ({children}: Props) => {
     const router = useRouter()
     const pathname = usePathname()
-    auth.handleRedirect(router, pathname)
+    useEffect(() => {
+        auth.handleRedirect(router, pathname)
+    }, [])
 
     return (
         <div className='app-page'>

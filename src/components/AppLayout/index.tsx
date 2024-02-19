@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Layout } from 'antd'
 import AppGlobalHeader from '@/components/AppGlobalHeader/Index'
 import AppGlobalFooter from '@/components/AppGlobalFooter/Index'
@@ -53,7 +53,9 @@ const AppLayout = ({ children }: Props)=> {
     setVisible(visible)
   }
 
-  auth.handleRedirect(router, pathname)
+  useEffect(() => {
+    auth.handleRedirect(router, pathname)
+  }, [])
 
   return (
       <>

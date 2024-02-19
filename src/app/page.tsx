@@ -5,12 +5,15 @@ import Image from 'next/image'
 import AppDevelop from '@/components/AppDevelop'
 import { auth } from '@/utils/auth'
 import { usePathname, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function Home() {
   const router = useRouter()
   const pathname = usePathname()
 
-  auth.handleRedirect(router, pathname)
+  useEffect(() => {
+    auth.handleRedirect(router, pathname)
+  }, [])
 
   const open = true
     return (
